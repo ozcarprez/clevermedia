@@ -92,13 +92,6 @@
     overflow: hidden;
   }
 
-  .hero-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 24px;
-  }
-
   .hero-glow {
     position: absolute;
     width: 700px; height: 700px;
@@ -115,35 +108,6 @@
     pointer-events: none;
   }
 
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(59,130,246,0.1);
-    border: 1px solid rgba(59,130,246,0.2);
-    padding: 6px 14px;
-    border-radius: 100px;
-    font-size: 15px;
-    color: var(--accent);
-    font-weight: 500;
-    width: fit-content;
-    opacity: 0;
-    animation: up 0.7s forwards 0.2s;
-    flex-shrink: 0;
-  }
-
-  .badge-dot {
-    width: 6px; height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: blink 2s infinite;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
   .hero-title {
     font-size: clamp(72px, 13.5vw, 200px);
     font-weight: 800;
@@ -157,20 +121,6 @@
   .hero-title .line1 { color: var(--white); }
   .hero-title .line2 { color: var(--gray); }
   .hero-title .highlight { color: var(--accent); }
-
-  .hero-sub {
-    font-size: 16px;
-    color: var(--gray);
-    line-height: 1.6;
-    max-width: 400px;
-    font-weight: 300;
-    text-align: center;
-    margin-top: 12px;
-    opacity: 0;
-    animation: up 0.7s forwards 0.5s;
-  }
-
-  .hero-sub strong { color: var(--light); font-weight: 500; }
 
   .hero-actions {
     display: flex;
@@ -228,11 +178,9 @@
     max-width: 900px;
   }
 
-  .stats-phrase span {
-    color: var(--accent);
-  }
+  .stats-phrase span { color: var(--accent); }
 
-  /* SERVICES */
+  /* SECTION */
   .section {
     padding: 100px 48px;
   }
@@ -272,15 +220,13 @@
     line-height: 1.6;
   }
 
+  /* SERVICES */
   .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3px;
     margin-top: 48px;
   }
-
-  .svc-col { display: none; }
-  .svc-row-2 { display: none; }
 
   .svc {
     background: var(--surface);
@@ -346,8 +292,6 @@
     line-height: 1.1;
   }
 
-  .svc-featured .svc-name { font-size: 24px; }
-
   .svc-desc {
     font-size: 15px;
     color: var(--gray);
@@ -355,8 +299,6 @@
     font-weight: 300;
     max-width: 440px;
   }
-
-  .svc-featured .svc-desc { font-size: 15px; }
 
   .svc-tag {
     display: inline-block;
@@ -373,308 +315,92 @@
     width: fit-content;
   }
 
-  /* WHY */
-  .why-section {
-    padding: 100px 48px;
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .why-grid {
+  /* PORTFOLIO */
+  .portfolio-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    margin-top: 64px;
-    align-items: start;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+    margin-top: 48px;
   }
 
-  .why-left p {
-    font-size: 15px;
-    color: var(--gray);
-    line-height: 1.8;
-    margin-bottom: 20px;
-    font-weight: 300;
-  }
-
-  .why-left p strong { color: var(--light); font-weight: 500; }
-
-  .why-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--accent);
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    margin-top: 8px;
-    transition: gap 0.3s;
-  }
-  .why-link:hover { gap: 14px; }
-
-  .why-right {
+  .proj {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 40px 48px;
     display: flex;
     flex-direction: column;
-    gap: 2px;
-  }
-
-  .why-item {
-    background: var(--bg);
-    padding: 24px 28px;
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    border-radius: 2px;
+    justify-content: space-between;
+    min-height: 220px;
+    position: relative;
+    overflow: hidden;
     transition: background 0.3s;
+    text-decoration: none;
+    color: var(--white);
   }
 
-  .why-item:hover { background: #0d0d0d; }
-
-  .why-num {
-    font-size: 16px;
-    color: var(--accent);
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    padding-top: 3px;
-    flex-shrink: 0;
-  }
-
-  .why-item h4 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 4px;
-    letter-spacing: -0.3px;
-  }
-
-  .why-item p {
-    font-size: 15px;
-    color: var(--gray);
-    line-height: 1.5;
-    font-weight: 300;
-  }
-
-  /* PROCESS */
-  .why-section {
-    overflow: hidden;
-  }
-
-  .process-block {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 320px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .process-block:nth-child(1) .process-visual { background: #0f1923; }
-  .process-block:nth-child(2) .process-visual { background: #111827; }
-  .process-block:nth-child(3) .process-visual { background: #0a0f1a; }
-  .process-block:nth-child(4) .process-visual { background: #0d1117; }
-
-  .process-block:nth-child(even) { direction: rtl; }
-  .process-block:nth-child(even) > * { direction: ltr; }
-
-  .process-visual {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .process-visual-num {
-    font-size: 220px;
-    font-weight: 800;
-    color: rgba(255,255,255,0.03);
-    letter-spacing: -10px;
-    line-height: 1;
-    user-select: none;
-  }
-
-  .process-block:nth-child(1) .process-visual-num { color: rgba(59,130,246,0.08); }
-  .process-block:nth-child(2) .process-visual-num { color: rgba(6,214,160,0.06); }
-  .process-block:nth-child(3) .process-visual-num { color: rgba(59,130,246,0.06); }
-  .process-block:nth-child(4) .process-visual-num { color: rgba(6,214,160,0.05); }
-
-  .process-visual-line {
+  .proj::after {
+    content: '';
     position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 2px;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    transition: width 0.4s ease;
   }
 
-  .process-block:nth-child(1) .process-visual-line { background: linear-gradient(90deg, var(--accent), transparent); }
-  .process-block:nth-child(2) .process-visual-line { background: linear-gradient(90deg, var(--accent2), transparent); }
-  .process-block:nth-child(3) .process-visual-line { background: linear-gradient(90deg, var(--accent), transparent); }
-  .process-block:nth-child(4) .process-visual-line { background: linear-gradient(90deg, var(--accent2), transparent); }
+  .proj:hover { background: #161616; }
+  .proj:hover::after { width: 100%; }
+  .proj:hover .proj-arrow { color: var(--white); transform: translate(3px, -3px); }
 
-  .process-content {
-    background: var(--surface);
-    padding: 64px 56px;
+  .proj-top {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-bottom: 1px solid var(--border);
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
-  .process-step-num {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-
-  .process-block:nth-child(2) .process-step-num,
-  .process-block:nth-child(4) .process-step-num { color: var(--accent2); }
-
-  .process-content h4 {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.8px;
-    margin-bottom: 14px;
-    line-height: 1.1;
-  }
-
-  .process-content p {
-    font-size: 16px;
-    color: var(--gray);
-    line-height: 1.7;
-    font-weight: 300;
-    max-width: 340px;
-  }
-
-  /* PLANS */
-  .plans-grid {
-    display: grid;
-    grid-template-columns: 1fr 1px 1fr;
-    gap: 0;
-    margin-top: 80px;
-    align-items: start;
-  }
-
-  .plans-divider {
-    background: rgba(255,255,255,0.08);
-    align-self: stretch;
-    min-height: 100%;
-  }
-
-  .plan {
-    background: transparent;
-    padding: 0 64px 64px 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .plan-featured {
-    background: transparent;
-    padding: 0 0 64px 64px;
-    align-items: center;
-    text-align: center;
-  }
-
-  .plan-badge {
-    display: inline-block;
-    background: rgba(59,130,246,0.1);
-    border: 1px solid rgba(59,130,246,0.25);
-    color: var(--accent);
-    font-size: 10px;
+  .proj-tag {
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    padding: 3px 10px;
+    padding: 4px 10px;
     border-radius: 100px;
-    margin-left: 10px;
-    vertical-align: middle;
+    border: 1px solid;
   }
 
-  .plan-label {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+  .proj-arrow {
+    font-size: 18px;
+    color: rgba(255,255,255,0.2);
+    transition: color 0.3s, transform 0.3s;
   }
 
-  .plan-name {
-    font-size: 42px;
+  .proj-bottom { margin-top: 32px; }
+
+  .proj-name {
+    font-size: 22px;
     font-weight: 700;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
     line-height: 1.1;
-    margin-bottom: 24px;
   }
 
-  .plan-desc {
-    font-size: 18px;
+  .proj-desc {
+    font-size: 14px;
     color: var(--gray);
-    line-height: 1.75;
-    font-weight: 600;
-    margin-bottom: 40px;
+    font-weight: 300;
+    line-height: 1.5;
   }
 
-  .plan-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 48px;
-  }
+  /* colores por proyecto */
+  .proj-restaurante .proj-tag { color: #f97316; border-color: rgba(249,115,22,0.3); background: rgba(249,115,22,0.08); }
+  .proj-restaurante::after { background: #f97316; }
 
-  .plan-list li {
-    font-size: 18px;
-    color: var(--gray);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 600;
-    padding: 12px 0;
-  }
+  .proj-papaya .proj-tag { color: #22c55e; border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.08); }
+  .proj-papaya::after { background: #22c55e; }
 
-  .plan-list li::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    flex-shrink: 0;
-  }
+  .proj-purificadora .proj-tag { color: #38bdf8; border-color: rgba(56,189,248,0.3); background: rgba(56,189,248,0.08); }
+  .proj-purificadora::after { background: #38bdf8; }
 
-  .plan-list li.guarantee {
-    color: var(--accent);
-  }
-
-  .plan-list li.guarantee::before {
-    background: var(--accent);
-  }
-
-  .plan-btn {
-    display: inline-block;
-    padding: 18px 48px;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.25);
-    color: var(--white);
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-decoration: none;
-    text-align: center;
-    transition: border-color 0.3s, background 0.3s;
-    width: fit-content;
-    border-radius: 6px;
-  }
-
-  .plan-btn:hover { border-color: var(--white); }
-
-  .plan-btn-accent {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--white);
-  }
-
-  .plan-btn-accent:hover { background: #2563eb; border-color: #2563eb; }
+  .proj-ventaconecta .proj-tag { color: #a78bfa; border-color: rgba(167,139,250,0.3); background: rgba(167,139,250,0.08); }
+  .proj-ventaconecta::after { background: #a78bfa; }
 
   /* IDEA SECTION */
   .idea-section {
@@ -714,64 +440,6 @@
     font-weight: 300;
   }
 
-  /* CTA */
-  .cta-section {
-    padding: 140px 48px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta-glow {
-    position: absolute;
-    width: 800px; height: 400px;
-    background: radial-gradient(ellipse, rgba(59,130,246,0.05) 0%, transparent 70%);
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-
-  .cta-title {
-    font-size: clamp(40px, 7vw, 88px);
-    font-weight: 800;
-    letter-spacing: -3px;
-    line-height: 1;
-    margin-bottom: 24px;
-  }
-
-  .cta-title span { color: var(--accent); }
-
-  .cta-sub {
-    font-size: 16px;
-    color: var(--gray);
-    font-weight: 300;
-    max-width: 400px;
-    margin: 0 auto 48px;
-    line-height: 1.7;
-  }
-
-  .cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--accent);
-    color: var(--white);
-    padding: 16px 40px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: opacity 0.2s, transform 0.2s;
-  }
-  .cta-btn:hover { opacity: 0.85; transform: translateY(-2px); }
-
-  .cta-note {
-    margin-top: 20px;
-    font-size: 15px;
-    color: #333;
-    letter-spacing: 0.05em;
-  }
-
   /* FOOTER */
   footer {
     border-top: 1px solid var(--border);
@@ -795,20 +463,13 @@
     .nav-links { display: none; }
     .hero { padding: 100px 20px 60px; }
     .hero-title { letter-spacing: -2px; }
-    .stats-bar { margin: 40px 20px 0; padding: 24px; grid-template-columns: 1fr; gap: 24px; }
-    .stat { padding: 0; border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
-    .stat:last-child { border-bottom: none; padding-bottom: 0; }
+    .stats-bar { margin: 40px 20px 0; padding: 24px; }
     .section { padding: 80px 20px; }
     .services-grid { grid-template-columns: 1fr; }
-    .why-section { padding: 80px 20px; }
-    .process-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
-    .why-grid { grid-template-columns: 1fr; gap: 48px; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .idea-section { padding: 80px 20px; }
     .cta-section { padding: 100px 20px; }
     footer { padding: 28px 20px; flex-direction: column; gap: 12px; text-align: center; }
-    .plans-grid { grid-template-columns: 1fr; }
-    .plans-divider { display: none; }
-    .plan { padding: 0 0 64px 0; }
-    .plan-featured { padding: 64px 0; }
   }
 </style>
 </head>
@@ -818,6 +479,7 @@
   <a href="#" class="logo">clever<span>media</span></a>
   <div class="nav-links">
     <a href="#servicios">Servicios</a>
+    <a href="#portafolio">Portafolio</a>
     <a href="#contacto" class="nav-btn">Cotizar gratis</a>
   </div>
 </nav>
@@ -827,8 +489,6 @@
   <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
 
-
-
   <h1 class="hero-title">
     <span class="line1">Diseñamos</span><br>
     <span class="line2">tu presencia</span><br>
@@ -836,7 +496,7 @@
   </h1>
 
   <div class="hero-actions">
-    <a href="#planes" class="btn-primary">Empezar ahora</a>
+    <a href="#portafolio" class="btn-primary">Ver portafolio</a>
     <a href="#servicios" class="btn-ghost">Ver servicios →</a>
   </div>
 </section>
@@ -880,46 +540,63 @@
   </div>
 </section>
 
-<!-- PLANES -->
-<section class="section" id="planes" style="text-align: center;">
-  <div class="tag" style="justify-content: center;">Planes</div>
-  <h2 class="section-title">Simple y sin sorpresas</h2>
+<!-- PORTAFOLIO -->
+<section class="section" id="portafolio" style="text-align: center;">
+  <div class="tag" style="justify-content: center;">Portafolio</div>
+  <h2 class="section-title">Proyectos recientes</h2>
+  <p class="section-sub" style="margin: 0 auto 0;">Páginas reales, para negocios reales en Tijuana.</p>
 
-  <div class="plans-grid">
-    <div class="plan">
-      <div class="plan-label">Básico</div>
-      <h3 class="plan-name">Tu página, lista.</h3>
-      <p class="plan-desc">Diseñamos y entregamos tu página. Con tus propias cuentas — tú tienes el control de todo.</p>
-      <ul class="plan-list">
-        <li>Diseño personalizado</li>
-        <li>Adaptada a celular y computadora</li>
-        <li>Sin límite de secciones</li>
-        <li>Entrega en horas</li>
-        <li class="guarantee">Primero hacemos tu página, después pagas</li>
-      </ul>
-      <a href="https://wa.me/526631261241?text=Hola%2C%20me%20interesa%20el%20plan%20básico" class="plan-btn" target="_blank">Cotizar</a>
-    </div>
+  <div class="portfolio-grid">
 
-    <div class="plans-divider"></div>
+    <a href="https://restaurante-majo.vercel.app/" target="_blank" class="proj proj-restaurante">
+      <div class="proj-top">
+        <span class="proj-tag">Restaurante</span>
+        <span class="proj-arrow">↗</span>
+      </div>
+      <div class="proj-bottom">
+        <div class="proj-name">Restaurante Majo</div>
+        <div class="proj-desc">Landing page con menú, galería y ubicación para restaurante familiar en Tijuana.</div>
+      </div>
+    </a>
 
-    <div class="plan plan-featured">
-      <div class="plan-label">Pro <span class="plan-badge">Recomendado</span></div>
-      <h3 class="plan-name">Siempre contigo.</h3>
-      <p class="plan-desc">Disponibles siempre para actualizaciones, promociones o cualquier cambio que necesites.</p>
-      <ul class="plan-list">
-        <li>Todo lo del plan Básico</li>
-        <li>Cambios y actualizaciones</li>
-        <li>Nuevas promociones cuando quieras</li>
-        <li>Soporte directo por WhatsApp</li>
-        <li class="guarantee">Primero hacemos tu página, después pagas</li>
-      </ul>
-      <a href="https://wa.me/526631261241?text=Hola%2C%20me%20interesa%20el%20plan%20Pro" class="plan-btn plan-btn-accent" target="_blank">Cotizar</a>
-    </div>
+    <a href="https://papayafreshinc.vercel.app/" target="_blank" class="proj proj-papaya">
+      <div class="proj-top">
+        <span class="proj-tag">Exportación</span>
+        <span class="proj-arrow">↗</span>
+      </div>
+      <div class="proj-bottom">
+        <div class="proj-name">Papaya Fresh Inc.</div>
+        <div class="proj-desc">Sitio corporativo bilingüe para empresa exportadora de productos agrícolas.</div>
+      </div>
+    </a>
+
+    <a href="https://purificadora-el-canon.vercel.app/" target="_blank" class="proj proj-purificadora">
+      <div class="proj-top">
+        <span class="proj-tag">Servicio local</span>
+        <span class="proj-arrow">↗</span>
+      </div>
+      <div class="proj-bottom">
+        <div class="proj-name">Purificadora El Cañón</div>
+        <div class="proj-desc">Página de purificadora local con precios, servicios y contacto directo por WhatsApp.</div>
+      </div>
+    </a>
+
+    <a href="https://ventaconecta2.vercel.app/" target="_blank" class="proj proj-ventaconecta">
+      <div class="proj-top">
+        <span class="proj-tag">Marketplace</span>
+        <span class="proj-arrow">↗</span>
+      </div>
+      <div class="proj-bottom">
+        <div class="proj-name">VentaConecta</div>
+        <div class="proj-desc">Plataforma que conecta comercios locales de Tijuana con vendedores independientes.</div>
+      </div>
+    </a>
+
   </div>
 </section>
 
 <!-- IDEA -->
-<section class="section idea-section">
+<section class="section idea-section" id="contacto">
   <div class="idea-inner">
     <div class="idea-tag">Para los curiosos</div>
     <h2 class="idea-title">¿Tienes una idea digital?</h2>
@@ -945,7 +622,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.svc, .why-item, .stat').forEach(el => {
+  document.querySelectorAll('.svc, .proj').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(16px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
